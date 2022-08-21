@@ -23,8 +23,8 @@ int main(){
 	/*判定大家成績*/
 	if(a[0]>=60) cout<<"best case"<<endl;  
 	else{
-		for(int i=0;a[i]<60;i++){		//最高不及格 b(順著找) 
-			b=a[i];
+		for(int i=0;a[i]<60 and i<stu;i++){		//最高不及格 b(順著找) 
+			b=a[i];					//如果沒補and i<stu，因為後面沒滿的陣列值=0->會印出0 
 		}
 		cout<<b<<endl;
 	}
