@@ -11,14 +11,16 @@ using namespace std;
 int main(){
 	int A,B;
 	string s;		
-	while(cin>>s){				//輸入一字串s 
-		A=0,B=0;							//初始化A、B的值 
-		for(int i=0;i<s.length();i++){		//s.length()：字串s的長度 
-			if(i%2==0){						//如果i是偶數 
-				A=A+s[i]-'0';				//將原本的A值加上第i+1位數 
+	while(cin>>s){						//輸入一字串s 
+		A=0,B=0;					//初始化A、B的值 
+		for(int i=0;i<s.length();i++){			//s.length()：字串s的長度 
+			if(i%2==0){				//如果i是偶數 
+				s[i]=s[i]-'0';			//將s[i]從char轉換成int (如果沒加s[i]=s[i]-'0';這行的話，B會變成B+49)
+				A=A+s[i];			//將原本的A值加上第i+1位數 
 			}
-			else if(i%2!=0){				//如果i是奇數 
-				B=B+s[i]-'0';				//將原本的B值加上第i+1位數 
+			else if(i%2!=0){			//如果i是奇數 
+				s[i]=s[i]-'0';
+				B=B+s[i];					
 			}
 		}
 		cout<<abs(A-B)<<endl;				//輸出|A－B| 
